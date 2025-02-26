@@ -3,6 +3,7 @@ Um simples programa em JAVA onde o usuário entra com as informações do jogo q
 
 O projeto está sendo feito utilizando o Eclipe IDE, Java na versão 17.0.2, e o Sqlite jdbc na versão 3.29.1.0 .
 
+
 *** Futuras melhorias ***
 
 1. Edição e exclusão de jogos diretamente pela página web;
