@@ -18,8 +18,7 @@ public class MediaPonderadaJogo {
         // Converte para formato padronizado
         String dataLancamento = formatarData(dataLancamentoInput);
         
-        int numPlataformas = Integer.parseInt(JOptionPane.showInputDialog("Digite quantas plataformas tem "
-        																					+ "reviews:"));
+        int numPlataformas = Integer.parseInt(JOptionPane.showInputDialog("Digite quantas plataformas tem " + "reviews:"));
         
         double somaNotasPonderadas = 0;
         int somaCriticos = 0;
@@ -27,10 +26,8 @@ public class MediaPonderadaJogo {
         
         for (int i = 1; i <= numPlataformas; i++) {
             String nomePlataforma = JOptionPane.showInputDialog("Digite o nome da Plataforma " + i + ":");
-            double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota média no " + 
-            																		nomePlataforma + ":"));
-            int criticos = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de reviews no " + 
-            																		nomePlataforma + ":"));
+            double nota = Double.parseDouble(JOptionPane.showInputDialog("Digite a nota média no " + nomePlataforma + ":"));
+            int criticos = Integer.parseInt(JOptionPane.showInputDialog("Digite o número de reviews no " + nomePlataforma + ":"));
             
             somaNotasPonderadas += nota * criticos;
             somaCriticos += criticos;
@@ -56,11 +53,9 @@ public class MediaPonderadaJogo {
             ResultSet rs = checkStmt.executeQuery();
             
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "O jogo '" + nomeJogo + "' já existe no banco de dados.",
-                														"Aviso", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "O jogo '" + nomeJogo + "' já existe no banco de dados.", "Aviso", JOptionPane.WARNING_MESSAGE);
             } else {
-                PreparedStatement insertStmt = conn.prepareStatement("INSERT INTO jogos (nome, data, nota, "
-                														+ "detalhes) VALUES (?, ?, ?, ?)");
+                PreparedStatement insertStmt = conn.prepareStatement("INSERT INTO jogos (nome, data, nota, " + "detalhes) VALUES (?, ?, ?, ?)");
                 insertStmt.setString(1, nomeJogo);
                 insertStmt.setString(2, dataLancamento);
                 insertStmt.setDouble(3, notaFinal);
@@ -84,8 +79,7 @@ public class MediaPonderadaJogo {
             
             while (rs.next()) {
                 htmlContent += "<tr><td>" + rs.getString("nome") + "</td><td>" + rs.getString("data") + 
-                				"</td><td>" + rs.getDouble("nota") + "</td><td>" + rs.getString("detalhes") + 
-                																				"</td></tr>";
+                				"</td><td>" + rs.getDouble("nota") + "</td><td>" + rs.getString("detalhes") + "</td></tr>";
             }
             conn.close();
             
@@ -97,11 +91,9 @@ public class MediaPonderadaJogo {
         
         File file = new File("jogos.html");
         if (!file.exists()) {
-            JOptionPane.showMessageDialog(null, "O arquivo jogos.html não foi encontrado!", "Erro", 
-            																	JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "O arquivo jogos.html não foi encontrado!", "Erro", JOptionPane.ERROR_MESSAGE);
         } else {
-            int resposta = JOptionPane.showConfirmDialog(null, "Deseja abrir a planilha de jogos?", 
-            												"Acessar Planilha", JOptionPane.YES_NO_OPTION);
+            int resposta = JOptionPane.showConfirmDialog(null, "Deseja abrir a planilha de jogos?", "Acessar Planilha", JOptionPane.YES_NO_OPTION);
             if (resposta == JOptionPane.YES_OPTION) {
                 try {
                     Desktop.getDesktop().browse(file.toURI());
