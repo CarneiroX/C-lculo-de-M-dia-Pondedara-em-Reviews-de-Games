@@ -1,7 +1,7 @@
 # Calculo-de-M-dia-Pondedara-em-Reviews-de-Games
 Um simples programa em JAVA onde o usuário entra com as informações do jogo que ele quer calcular a média ponderada, para que ele tenha uma média um pouco mais realista da nota do jogo. Primeiramento o usuário digita nome e data de lançamento do game, seguido pela quantiade de plataformas onde há avaliação do jogo (seguindo o Metacritic se possível). Depois disso ele entrára com as informações do nome da plataforma, a nota média e a quantidade de reviews daquela plataforma. Posteriormente o programa calculará a média ponderada e exibirá uma planilha em uma página WEB com todos os games que o usuário digitou a média ponderada.
 
-O projeto está sendo feito utilizando o Eclipe IDE, Java na versão 17.0.2, e o Sqlite jdbc na versão 3.29.1.0 .
+O projeto está sendo feito utilizando o Eclipe IDE, Java na versão 17.0.2, Sqlite jdbc na versão 3.29.1.0 .
 
 
 *** Futuras melhorias ***
